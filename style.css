@@ -197,7 +197,7 @@ body {
 
 .status-bar {
     padding: 10px 20px;
-    background: #f8f9fa;
+    background: #89b0d667;
     border-top: 1px solid var(--border-color);
     display: flex;
     justify-content: space-between;
