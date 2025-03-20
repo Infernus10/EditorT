@@ -1,4 +1,3 @@
-// Font family and size handlers
 document.getElementById('fontFamily').addEventListener('change', function() {
     document.execCommand('fontName', false, this.value);
 });
@@ -7,7 +6,6 @@ document.getElementById('fontSize').addEventListener('change', function() {
     document.execCommand('fontSize', false, this.value);
 });
 
-// Color handlers
 function changeTextColor(color) {
     document.execCommand('foreColor', false, color);
 }
@@ -16,12 +14,10 @@ function changeBackgroundColor(color) {
     document.execCommand('hiliteColor', false, color);
 }
 
-// Search and replace functionality
 function searchText() {
     const searchTerm = document.getElementById('searchInput').value;
     const editorContent = document.getElementById('editor').innerHTML;
     
-    // Remove previous highlights
     const cleanContent = editorContent.replace(/<mark class="highlight">(.*?)<\/mark>/g, '$1');
     
     if (searchTerm) {
@@ -209,7 +205,6 @@ function showSplit() {
     showMethodResult(`split("${separator}"): [${result.map(item => `"${item}"`).join(', ')}]`);
 }
 
-// Word and character count
 function updateWordAndCharCount() {
     const text = document.getElementById('editor').innerText;
     const wordCount = text.trim() === '' ? 0 : text.trim().split(/\s+/).length;
@@ -219,7 +214,6 @@ function updateWordAndCharCount() {
     document.getElementById('charCount').textContent = `Caracteres: ${charCount}`;
 }
 
-// Add event listeners
 document.getElementById('editor').addEventListener('input', updateWordAndCharCount);
 document.getElementById('editor').addEventListener('paste', function(e) {
     e.preventDefault();
@@ -227,5 +221,4 @@ document.getElementById('editor').addEventListener('paste', function(e) {
     document.execCommand('insertText', false, text);
 });
 
-// Initialize word and character count
 updateWordAndCharCount();
