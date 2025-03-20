@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Editor de texto Bruno y Emiliano</title>
+    <title>Editor de texto Bruno Y Emiliano</title>
     <link rel="stylesheet" href="style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -14,13 +14,7 @@
         <div class="editor-container">
             <div class="toolbar">
                 <div class="toolbar-group">
-                    <select id="fontFamily" class="toolbar-button">
-                        <option value="Poppins">Poppins</option>
-                        <option value="Arial">Arial</option>
-                        <option value="Times New Roman">Times New Roman</option>
-                        <option value="Courier New">Courier New</option>
-                        <option value="Georgia">Georgia</option>
-                    </select>
+                    
                     <select id="fontSize" class="toolbar-button">
                         <option value="1">12px</option>
                         <option value="2">14px</option>
@@ -36,15 +30,7 @@
                     <button onclick="document.execCommand('italic')" class="toolbar-button">I</button>
                     <button onclick="document.execCommand('underline')" class="toolbar-button">U</button>
                 </div>
-                <div class="toolbar-group">
-                    <button onclick="document.execCommand('justifyLeft')" class="toolbar-button">⫷</button>
-                    <button onclick="document.execCommand('justifyCenter')" class="toolbar-button">≣</button>
-                    <button onclick="document.execCommand('justifyRight')" class="toolbar-button">⫸</button>
-                </div>
-                <div class="toolbar-group">
-                    <input type="color" id="textColor" class="toolbar-button color-picker" onchange="changeTextColor(this.value)">
-                    <input type="color" id="bgColor" class="toolbar-button color-picker" onchange="changeBackgroundColor(this.value)">
-                </div>
+                
             </div>
             <div class="search-bar">
                 <input type="text" id="searchInput" placeholder="Buscar..." class="search-input">
@@ -54,58 +40,59 @@
                 <button onclick="replaceAllText()" class="search-button">Reemplazar Todo</button>
             </div>
             <div id="editor" contenteditable="true" class="editor"></div>
-            <div class="string-methods">
-                <h3>Métodos de String</h3>
-                <div class="methods-container">
-                    <div class="method-section">
-                        <h4>Información Básica</h4>
-                        <div class="method-group">
-                            <button onclick="showLength()" class="method-button">length</button>
-                            <button onclick="showCharAt()" class="method-button">charAt</button>
-                            <button onclick="showCharCodeAt()" class="method-button">charCodeAt</button>
-                            <button onclick="showAt()" class="method-button">at</button>
-                            <button onclick="showBracket()" class="method-button">[ ]</button>
-                        </div>
-                    </div>
-                    <div class="method-section">
-                        <h4>Extracción de Texto</h4>
-                        <div class="method-group">
-                            <button onclick="showSlice()" class="method-button">slice</button>
-                            <button onclick="showSubstring()" class="method-button">substring</button>
-                            <button onclick="showSubstr()" class="method-button">substr</button>
-                        </div>
-                    </div>
-                    <div class="method-section">
-                        <h4>Transformación</h4>
-                        <div class="method-group">
-                            <button onclick="showToUpperCase()" class="method-button">toUpperCase</button>
-                            <button onclick="showToLowerCase()" class="method-button">toLowerCase</button>
-                            <button onclick="showConcat()" class="method-button">concat</button>
-                            <button onclick="showRepeat()" class="method-button">repeat</button>
-                        </div>
-                    </div>
-                    <div class="method-section">
-                        <h4>Limpieza y Formato</h4>
-                        <div class="method-group">
-                            <button onclick="showTrim()" class="method-button">trim</button>
-                            <button onclick="showTrimStart()" class="method-button">trimStart</button>
-                            <button onclick="showTrimEnd()" class="method-button">trimEnd</button>
-                            <button onclick="showPadStart()" class="method-button">padStart</button>
-                            <button onclick="showPadEnd()" class="method-button">padEnd</button>
-                        </div>
-                    </div>
-                    <div class="method-section">
-                        <h4>Análisis</h4>
-                        <div class="method-group">
-                            <button onclick="showSplit()" class="method-button">split</button>
-                        </div>
-                    </div>
-                </div>
-                <div id="methodResult" class="method-result"></div>
-            </div>
             <div class="status-bar">
                 <span id="wordCount">Palabras: 0</span>
                 <span id="charCount">Caracteres: 0</span>
+            </div>
+        </div>
+        
+        <div class="string-methods">
+            <h3>Métodos de String</h3>
+            <div class="methods-container">
+                <div class="method-section">
+                    <h4>Información Básica</h4>
+                    <div class="method-group">
+                        <button onclick="showLength()" class="method-button">length</button>
+                        <button onclick="showCharAt()" class="method-button">charAt</button>
+                        <button onclick="showCharCodeAt()" class="method-button">charCodeAt</button>
+                        <button onclick="showAt()" class="method-button">at</button>
+                        <button onclick="showBracket()" class="method-button">[ ]</button>
+                    </div>
+                </div>
+                <div class="method-section">
+                    <h4>Extracción de Texto</h4>
+                    <div class="method-group">
+                        <button onclick="showSlice()" class="method-button">slice</button>
+                        <button onclick="showSubstring()" class="method-button">substring</button>
+                        <button onclick="showSubstr()" class="method-button">substr</button>
+                    </div>
+                </div>
+                <div class="method-section">
+                    <h4>Transformación</h4>
+                    <div class="method-group">
+                        <button onclick="showToUpperCase()" class="method-button">toUpperCase</button>
+                        <button onclick="showToLowerCase()" class="method-button">toLowerCase</button>
+                        <button onclick="showConcat()" class="method-button">concat</button>
+                        <button onclick="showRepeat()" class="method-button">repeat</button>
+                    </div>
+                </div>
+                <div class="method-section">
+                    <h4>Limpieza y Formato</h4>
+                    <div class="method-group">
+                        <button onclick="showTrim()" class="method-button">trim</button>
+                        <button onclick="showTrimStart()" class="method-button">trimStart</button>
+                        <button onclick="showTrimEnd()" class="method-button">trimEnd</button>
+                        <button onclick="showPadStart()" class="method-button">padStart</button>
+                        <button onclick="showPadEnd()" class="method-button">padEnd</button>
+                    </div>
+                </div>
+                <div class="method-section">
+                    <h4>Análisis</h4>
+                    <div class="method-group">
+                        <button onclick="showSplit()" class="method-button">split</button>
+                    </div>
+                </div>
+                <div id="methodResult" class="method-result"></div>
             </div>
         </div>
     </div>
